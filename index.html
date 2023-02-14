@@ -2,6 +2,16 @@
 <html>
 <head>
 	<title>Test FOTA hébergeur Fouad =>Syscom Prorep</title>
+	body {
+        background-color: black;
+        background-image: url("https://media.ooreka.fr/public/image/3-305497-2665-main-13059759.jpg");
+        background-repeat: no-repeat;
+        background-position: right bottom;
+      }
+    </style>
+	
+	
+	
 	<style>
 		h1 {
 			color: blue;
@@ -9,12 +19,31 @@
 		}
 	</style>
 </head>
-<body>
-	<h1>Test FOTA hébergeur Fouad =>Syscom Prorep</h1>
-	<a id="download-link" href="https://www.dropbox.com/s/i4fmfdyer6noub3/B07V01toB17V01.bin?dl=1" download>Télécharger le fichier .bin</a>
+  <body>
+    <h1 style="color: blue; font-size: 48px;">Test FOTA hébergeur Fouad</h1>
+    <a href="https://example.com/B07V01toB17V01.bin" download onclick="authenticate(event)">Télécharger le fichier .bin</a>
 
 	<script>
-		document.getElementById("download-link").click();
+		function authenticate(event) {
+			event.preventDefault();
+			var username = prompt("Entrez votre nom d'utilisateur");
+			var password = prompt("Entrez votre mot de passe");
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", event.target.href, true, username, password);
+			xhr.responseType = "blob";
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					var link = document.createElement("a");
+					link.href = window.URL.createObjectURL(xhr.response);
+					link.download = "B07V01toB17V01.bin";
+					document.body.appendChild(link);
+					link.click();
+				} else {
+					alert("Erreur lors du téléchargement du fichier");
+				}
+			};
+			xhr.send();
+		}
 	</script>
 </body>
 </html>
