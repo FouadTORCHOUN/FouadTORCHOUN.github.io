@@ -15,6 +15,29 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
+      
+      .floating-fouad {
+        position: absolute;
+        font-size: 50px;
+        color: #FF00FF;
+      }
+      
+      #background-image {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .goat-statue {
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     </style>
     <script>
       function getRandomColor() {
@@ -32,4 +55,25 @@
         var w = window.innerWidth - fouad.clientWidth;
         var h = window.innerHeight - fouad.clientHeight;
         if (x < 0 || x > w || y < 0 || y > h) {
-          fouad.style
+          fouad.style.color = getRandomColor();
+        }
+      }
+      setInterval(changeColor, 50);
+    </script>
+  </head>
+  <body>
+    <img id="background-image" src="background.jpg">
+    <div id="fouad">Fouad</div>
+    <img class="goat-statue" src="goat.jpg">
+    <script>
+      for (var i = 0; i < 20; i++) {
+        var fouad = document.createElement("div");
+        fouad.classList.add("floating-fouad");
+        fouad.innerHTML = "Fouad";
+        fouad.style.left = Math.floor(Math.random() * 100) + "vw";
+        fouad.style.top = Math.floor(Math.random() * 100) + "vh";
+        document.body.appendChild(fouad);
+      }
+    </script>
+  </body>
+</html>
