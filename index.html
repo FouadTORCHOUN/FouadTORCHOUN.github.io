@@ -1,67 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<title>Blog IoT - Les dernières actualités de l'Internet des Objets</title>
-	<meta name="description" content="Suivez les dernières tendances de l'Internet des Objets grâce à notre blog dédié à cette technologie révolutionnaire.">
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<header>
-		<div class="logo">
-			<h1>Blog IoT</h1>
-			<p>Les dernières actualités de l'Internet des Objets</p>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#">Accueil</a></li>
-				<li><a href="#">Articles</a></li>
-				<li><a href="#">À propos</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section class="featured-post">
-			<img src="https://images.unsplash.com/photo-1554579668-2f22b7d7e4fb" alt="Image à la une">
-			<div class="post-content">
-				<h2><a href="#">Titre de l'article en vedette</a></h2>
-				<p class="meta">Publié le 20 février 2023 par Jean Dupont</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non purus vitae velit ultrices eleifend. Nullam at eros id mauris aliquet varius vel sit amet est.</p>
-				<a href="#" class="read-more">Lire la suite</a>
-			</div>
-		</section>
-		<section class="recent-posts">
-			<h2>Articles récents</h2>
-			<ul>
-				<li>
-					<a href="#">
-						<img src="https://images.unsplash.com/photo-1601887307006-33d85e7d6ba8" alt="Image de l'article">
-						<div class="post-content">
-							<h3>Titre de l'article récent</h3>
-							<p class="meta">Publié le 18 février 2023 par Jane Smith</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="https://images.unsplash.com/photo-1601887111098-c704b60f6e39" alt="Image de l'article">
-						<div class="post-content">
-							<h3>Titre de l'article récent</h3>
-							<p class="meta">Publié le 16 février 2023 par John Doe</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="https://images.unsplash.com/photo-1601887627943-8e58edcb682a" alt="Image de l'article">
-						<div class="post-content">
-							<h3>Titre de l'article récent</h3>
-							<p class="meta">Publié le 14 février 2023 par Jane Doe</p>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</section>
-	</main>
-	<footer
+<html>
+  <head>
+    <title>Page Fouad</title>
+    <style>
+      #fouad {
+        font-size: 100px;
+        position: absolute;
+        animation-name: rotate;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <script>
+      function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+      function changeColor() {
+        var fouad = document.getElementById("fouad");
+        var x = fouad.offsetLeft;
+        var y = fouad.offsetTop;
+        var w = window.innerWidth - fouad.clientWidth;
+        var h = window.innerHeight - fouad.clientHeight;
+        if (x < 0 || x > w || y < 0 || y > h) {
+          fouad.style
