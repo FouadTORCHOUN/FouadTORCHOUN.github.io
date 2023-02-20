@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Test FOTA hébergeur Fouad =>Syscom Prorep</title>
-	<style>
-		h1 {
-			color: blue;
-			font-size: 36px;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique en ligne de IOT</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Test FOTA hébergeur Fouad =>Syscom Prorep</h1>
-	<a href="https://example.com/B07V01toB17V01.bin" download onclick="authenticate(event)">Télécharger le fichier .bin</a>
-
-	<script>
-		function authenticate(event) {
-			event.preventDefault();
-			var username = prompt("Entrez votre nom d'utilisateur");
-			var password = prompt("Entrez votre mot de passe");
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", event.target.href, true, username, password);
-			xhr.responseType = "blob";
-			xhr.onload = function() {
-				if (xhr.status === 200) {
-					var link = document.createElement("a");
-					link.href = window.URL.createObjectURL(xhr.response);
-					link.download = "B07V01toB17V01.bin";
-					document.body.appendChild(link);
-					link.click();
-				} else {
-					alert("Erreur lors du téléchargement du fichier");
-				}
-			};
-			xhr.send();
-		}
-	</script>
+  <header>
+    <div class="container">
+      <h1 class="logo">Boutique en ligne de IOT</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Produits</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Bienvenue sur notre boutique en ligne de IOT</h2>
+        <p>Nous proposons une large sélection de produits de haute qualité pour vous aider à automatiser votre maison et à améliorer votre vie quotidienne.</p>
+        <a href="#" class="button">Voir nos produits</a>
+      </div>
+    </section>
+    <section class="features">
+      <div class="container">
+        <h2>Nos produits</h2>
+        <div class="grid">
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1555088553-d1c24702745e" alt="Produit 1">
+            <h3>Produit 1</h3>
+            <p>Description du produit 1</p>
+            <a href="#" class="button">En savoir plus</a>
+          </div>
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1610148315731-8ba7f4d4e4e7" alt="Produit 2">
+            <h3>Produit 2</h3>
+            <p>Description du produit 2</p>
+            <a href="#" class="button">En savoir plus</a>
+          </div>
+          <div class="feature">
+            <img src="https://images.unsplash.com/photo-1604459217409-69d0b7de08f8" alt="Produit 3">
+            <h3>Produit 3</h3>
+            <p>Description du produit 3</p>
+            <a href="#" class="button">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>© 2023 Boutique en ligne de IOT. Tous droits réservés.</p>
+    </div>
+  </footer>
 </body>
 </html>
